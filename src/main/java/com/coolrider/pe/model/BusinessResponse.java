@@ -47,4 +47,11 @@ public class BusinessResponse
 		this.messagge = messagge;
 	}
 
+	@Override
+	public String toString()
+	{
+		return "BusinessResponse [status=" + status + ", code=" + code + ", information=" + information + ", messagge="
+				+ messagge + "]";
+	}
+
 }
