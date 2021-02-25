@@ -1,5 +1,7 @@
 package com.coolrider.pe.model;
 
+import java.util.HashMap;
+
 public class BusinessResponse
 {
 	private int status;

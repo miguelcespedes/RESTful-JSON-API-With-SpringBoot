@@ -20,6 +20,7 @@ public class CustomerServiceImpl implements CustomerService
 		List<Customer> customerList = new ArrayList();
 		customerList.add(new Customer(42848585, "Miguel", "Céspedes", "miguelcespedes@outlook.com"));
 		customerList.add(new Customer(47046135, "Tamara", "Nuñez", "tamaranp@outlook.com"));
+		customerList.add(new Customer(12345678, "Juan", "Perez", "jperez@outlook.com"));
 
 		HashMap<String, Object> format = new HashMap();
 		format.put("total", customerList.size());

@@ -1,0 +1,14 @@
+[
+	{
+		"operation": "shift",
+		"spec": {
+			"#bc-coolrider-ms/customer": "MessageResponse.HeaderResponse.identity.serviceId",
+			"#827fzS5Bxm8SfWJKcqY9454asX7TvL2r": "MessageResponse.HeaderResponse.identity.messageId",
+			"#2021-02-25T11:15:00": "MessageResponse.HeaderResponse.identity.timestamp",
+			"#190.234.163.110": "MessageResponse.HeaderResponse.identity.deviceId",
+			"#RUC10428485853": "MessageResponse.HeaderResponse.identity.consumerId",
+			"#PE": "MessageResponse.HeaderResponse.identity.countryCode",
+			"@messagge": "MessageResponse.BodyResponse"
+		}
+	}
+]
