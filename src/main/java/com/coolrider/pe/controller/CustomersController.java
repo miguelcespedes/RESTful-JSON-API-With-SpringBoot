@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coolrider.pe.model.GenericMap;
-import com.coolrider.pe.service.CustomerService;
+import com.coolrider.pe.service.ICustomersService;
 
 @RestController
 @RequestMapping("customer")
-public class CustomerController extends AbstractController
+public class CustomersController extends AbstractController
 {
 
 	@Autowired
-	private CustomerService businessMessagge;
+	private ICustomersService customersService;
 
 	@GetMapping(produces = "application/json")
 	public ResponseEntity<GenericMap> read()
 	{
-		return adaptToTemplateResponse(businessMessagge.getCustomers());
+		return adaptToTemplateResponse(customersService.getCustomers());
 	}
 
 }

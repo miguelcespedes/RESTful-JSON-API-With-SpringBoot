@@ -21,6 +21,12 @@ import com.fasterxml.jackson.databind.node.NullNode;
 
 public class CommonUtil
 {
+	public static GenericMap toGenericMap(Object obj)
+	{
+
+		return new ObjectMapper().convertValue(obj, GenericMap.class);
+	}
+	
 	public static String getAttributeValue(String key, GenericMap map)
 	{
 		return new ObjectMapper().convertValue(map, JsonNode.class).findPath(key).asText();
@@ -67,6 +73,8 @@ public class CommonUtil
 		map.put(key, value);
 		return map;
 	}
+
+
 
 	public static GenericMap httpToMap(HttpHeaders http)
 	{

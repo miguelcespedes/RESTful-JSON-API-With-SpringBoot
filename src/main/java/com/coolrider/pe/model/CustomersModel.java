@@ -1,13 +1,13 @@
 package com.coolrider.pe.model;
 
-public class Customer
+public class CustomersModel
 {
 	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String email;
 
-	public Customer(Integer id, String firstName, String lastName, String email)
+	public CustomersModel(Integer id, String firstName, String lastName, String email)
 	{
 		super();
 		this.id = id;
