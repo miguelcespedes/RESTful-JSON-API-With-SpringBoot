@@ -1,16 +1,11 @@
 package com.coolrider.pe.util;
 
-/**
- * Referencia:
- * https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
- */
-
 public enum BusinessData
 {
 
 	// Business Message
-	SUCCESS(0, "Success"), 
-	FAILURE(99, "Failure");
+	SUCCESS(1001, "Success"), //
+	FAILURE(9001, "Failure");//
 
 	private final int value;
 	private final String description;
