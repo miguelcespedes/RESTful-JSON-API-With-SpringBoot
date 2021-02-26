@@ -1,5 +1,6 @@
 package com.coolrider.pe.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.coolrider.pe.entity.CustomersEntity;
 import com.coolrider.pe.model.GenericMap;
 import com.coolrider.pe.repository.CustomersRepository;
+import com.coolrider.pe.util.CommonUtil;
 
 @Service
 public class CustomersService
@@ -16,21 +18,32 @@ public class CustomersService
 	@Autowired
 	private CustomersRepository customersRepository;
 
-	public GenericMap getAllCustomers()
+	/* CREATE */
+	public GenericMap registerCustomer(CustomersEntity customersEntity)
 	{
-		List<CustomersEntity> list = customersRepository.findAll();
+		customersRepository.save(customersEntity);
+		return CommonUtil.easyMap("success", true);
+	}
+
+	/* READ */
+	public GenericMap getCustomers(Integer id)
+	{
 		GenericMap genericMap = new GenericMap();
-		genericMap.put("total", list.size());
-		genericMap.put("elements", list);
+		List<CustomersEntity> customersList = new ArrayList<CustomersEntity>();
+		if (id.equals(0))
+		customersList = customersRepository.findAll();
+		else
+		customersList.add(customersRepository.findById(id).get());
+		genericMap.put("total", customersList.size());
+		genericMap.put("elements", customersList);
 		return genericMap;
 	}
-	
-	public GenericMap getCustomerByIndex(Integer id)
+
+	/* DELETE */
+	public GenericMap deleteCustomer(Integer id)
 	{
-		CustomersEntity record = customersRepository.findById(id).get();
-		GenericMap genericMap = new GenericMap();
-		genericMap.put("element", record);
-		return genericMap;
-	}	
+		customersRepository.deleteById(id);
+		return CommonUtil.easyMap("success", true);
+	}
 
 }
