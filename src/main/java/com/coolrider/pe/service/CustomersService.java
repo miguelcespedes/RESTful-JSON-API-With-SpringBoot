@@ -16,7 +16,7 @@ public class CustomersService
 	@Autowired
 	private CustomersRepository customersRepository;
 
-	public GenericMap getCustomers()
+	public GenericMap getAllCustomers()
 	{
 		List<CustomersEntity> list = customersRepository.findAll();
 		GenericMap genericMap = new GenericMap();
@@ -24,5 +24,13 @@ public class CustomersService
 		genericMap.put("elements", list);
 		return genericMap;
 	}
+	
+	public GenericMap getCustomerByIndex(Integer id)
+	{
+		CustomersEntity record = customersRepository.findById(id).get();
+		GenericMap genericMap = new GenericMap();
+		genericMap.put("element", record);
+		return genericMap;
+	}	
 
 }
