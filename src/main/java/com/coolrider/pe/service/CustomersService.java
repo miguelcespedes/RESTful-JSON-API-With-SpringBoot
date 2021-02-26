@@ -1,31 +1,28 @@
 package com.coolrider.pe.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.coolrider.pe.model.CustomersModel;
+import com.coolrider.pe.entity.CustomersEntity;
 import com.coolrider.pe.model.GenericMap;
+import com.coolrider.pe.repository.CustomersRepository;
 
 @Service
-public class CustomersService implements ICustomersService
+public class CustomersService
 {
 
-	@Override
+	@Autowired
+	private CustomersRepository customersRepository;
+
 	public GenericMap getCustomers()
 	{
-
-		List<CustomersModel> customerList = new ArrayList<CustomersModel>();
-		customerList.add(new CustomersModel(42848585, "Miguel", "Céspedes", "miguelcespedes@outlook.com"));
-		customerList.add(new CustomersModel(47046135, "Tamara", "Nuñez", "tamaranp@outlook.com"));
-		customerList.add(new CustomersModel(12345678, "Juan", "Perez", "jperez@outlook.com"));
-
-		GenericMap format = new GenericMap();
-		format.put("total", customerList.size());
-		format.put("elements", customerList);
-
-		return format;
+		List<CustomersEntity> list = customersRepository.findAll();
+		GenericMap genericMap = new GenericMap();
+		genericMap.put("total", list.size());
+		genericMap.put("elements", list);
+		return genericMap;
 	}
 
 }
