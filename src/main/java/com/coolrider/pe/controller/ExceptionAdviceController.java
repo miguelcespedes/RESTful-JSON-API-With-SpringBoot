@@ -14,6 +14,13 @@ import com.coolrider.pe.exception.BusinessException;
 import com.coolrider.pe.model.GenericMap;
 import com.coolrider.pe.util.CommonUtil;
 
+/**
+ * <h1>ExceptionAdviceController</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 @ControllerAdvice
 @Component
 public class ExceptionAdviceController

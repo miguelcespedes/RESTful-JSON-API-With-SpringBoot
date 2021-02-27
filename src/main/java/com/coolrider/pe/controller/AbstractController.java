@@ -1,4 +1,3 @@
-
 package com.coolrider.pe.controller;
 
 import org.slf4j.Logger;
@@ -11,6 +10,13 @@ import com.bazaarvoice.jolt.JsonUtils;
 import com.coolrider.pe.model.GenericMap;
 import com.coolrider.pe.util.CommonUtil;
 
+/**
+ * <h1>AbstractController</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 public abstract class AbstractController
 {
 	private final Logger logger = LoggerFactory.getLogger(getClass());

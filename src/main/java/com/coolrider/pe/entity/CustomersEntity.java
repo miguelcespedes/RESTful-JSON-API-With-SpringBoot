@@ -6,6 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * <h1>CustomersEntity</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 @Entity
 @Table(name = "tbl_customers")
 public class CustomersEntity

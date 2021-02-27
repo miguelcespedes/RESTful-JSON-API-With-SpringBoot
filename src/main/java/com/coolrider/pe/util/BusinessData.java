@@ -1,5 +1,12 @@
 package com.coolrider.pe.util;
 
+/**
+ * <h1>BusinessData</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 public enum BusinessData
 {
 

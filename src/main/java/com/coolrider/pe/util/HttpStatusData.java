@@ -1,9 +1,13 @@
 package com.coolrider.pe.util;
 
 /**
- * Referencia: https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+ * <h1>CommonUtil</h1> 
+ * https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+ * 
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
  */
-
 public enum HttpStatusData
 {
 

@@ -14,6 +14,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.MissingNode;
 import com.fasterxml.jackson.databind.node.NullNode;
 
+/**
+ * <h1>CommonUtil</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 public class CommonUtil
 {
 	public static GenericMap toGenericMap(Object obj)

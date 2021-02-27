@@ -1,5 +1,12 @@
 package com.coolrider.pe.exception;
 
+/**
+ * <h1>BusinessException</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 public class BusinessException extends Exception
 {
 	private static final long serialVersionUID = 1L;

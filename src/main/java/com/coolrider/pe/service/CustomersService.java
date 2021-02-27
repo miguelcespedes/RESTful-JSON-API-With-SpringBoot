@@ -11,6 +11,13 @@ import com.coolrider.pe.model.GenericMap;
 import com.coolrider.pe.repository.CustomersRepository;
 import com.coolrider.pe.util.CommonUtil;
 
+/**
+ * <h1>CustomersService</h1>
+ *
+ * @author Miguel Céspedes
+ * @version 1.0
+ * @since february 2021
+ */
 @Service
 public class CustomersService
 {
