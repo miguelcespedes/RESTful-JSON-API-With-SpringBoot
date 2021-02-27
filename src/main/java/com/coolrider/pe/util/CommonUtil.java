@@ -5,12 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Random;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.http.HttpHeaders;
 
 import com.coolrider.pe.model.GenericMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -26,7 +21,7 @@ public class CommonUtil
 
 		return new ObjectMapper().convertValue(obj, GenericMap.class);
 	}
-	
+
 	public static String getAttributeValue(String key, GenericMap map)
 	{
 		return new ObjectMapper().convertValue(map, JsonNode.class).findPath(key).asText();
@@ -49,11 +44,9 @@ public class CommonUtil
 		}
 
 	}
-
-	public static String getOperation(HttpServletRequest servlet)
-	{
-		return servlet.getRequestURI().toLowerCase().replace("/", "");
-	}
+	/*
+	 * public static String getOperation(HttpServletRequest servlet) { return servlet.getRequestURI().toLowerCase().replace("/", ""); }
+	 */
 
 	public static boolean strIsNull(String str)
 	{
@@ -74,22 +67,10 @@ public class CommonUtil
 		return map;
 	}
 
-
-
-	public static GenericMap httpToMap(HttpHeaders http)
-	{
-		GenericMap map = new GenericMap();
-		Iterator<Entry<String, List<String>>> entries = http.entrySet().iterator();
-		while (entries.hasNext())
-		{
-			Entry<String, List<String>> entry = entries.next();
-			String key = entry.getKey();
-			Object value = entry.getValue().get(0);
-			map.put(key, value);
-		}
-		return map;
-	}
-
+	/*
+	 * public static GenericMap httpToMap(HttpHeaders http) { GenericMap map = new GenericMap(); Iterator<Entry<String, List<String>>> entries = http.entrySet().iterator(); while (entries.hasNext()) { Entry<String, List<String>> entry = entries.next(); String key = entry.getKey();
+	 * Object value = entry.getValue().get(0); map.put(key, value); } return map; }
+	 */
 	public static String MapToString(GenericMap map)
 	{
 		try

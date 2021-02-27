@@ -19,14 +19,14 @@ public class CustomersService
 	private CustomersRepository customersRepository;
 
 	/* CREATE */
-	public GenericMap registerCustomer(CustomersEntity customersEntity)
+	public GenericMap registerCustomer(CustomersEntity customersEntity) throws Exception
 	{
 		customersRepository.save(customersEntity);
 		return CommonUtil.easyMap("success", true);
 	}
 
 	/* READ */
-	public GenericMap getCustomers(Integer id)
+	public GenericMap getCustomers(Integer id) throws Exception
 	{
 		GenericMap genericMap = new GenericMap();
 		List<CustomersEntity> customersList = new ArrayList<CustomersEntity>();
@@ -40,7 +40,7 @@ public class CustomersService
 	}
 
 	/* DELETE */
-	public GenericMap deleteCustomer(Integer id)
+	public GenericMap deleteCustomer(Integer id) throws Exception
 	{
 		customersRepository.deleteById(id);
 		return CommonUtil.easyMap("success", true);
