@@ -20,16 +20,6 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.coolrider.pe")
 public class GenericConfig
 {
-	private final Logger logger = LoggerFactory.getLogger(getClass());
-
-	@Bean
-	@Qualifier("mapBean")
-	public HashMap<String, Object> load()
-	{
-		HashMap<String, Object> mapBean = new HashMap<String, Object>();
-		mapBean.put("file", "sjdfkjsadf.json");
-		logger.info("GenericConfig/load/mapBean: {}", mapBean);
-		return mapBean;
-	}
+	
 
 }

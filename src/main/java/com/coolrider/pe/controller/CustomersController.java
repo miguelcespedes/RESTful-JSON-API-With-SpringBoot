@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coolrider.pe.model.GenericMap;
-import com.coolrider.pe.service.CustomersService;
+import com.coolrider.pe.service.CustomerService;
 
 /**
  * <h1>CustomersController</h1>
@@ -22,18 +22,18 @@ public class CustomersController extends AbstractController
 {
 
 	@Autowired
-	private CustomersService customersService;
+	private CustomerService customerService;
 
 	@RequestMapping(value = "${ms.resource.customer}", method = RequestMethod.GET)
 	public ResponseEntity<GenericMap> getCustomers() throws Exception
 	{
-		return adaptToTemplateResponse(customersService.getCustomers(0));
+		return adaptToTemplateResponse(customerService.getCustomers(null));
 	}
 
 	@RequestMapping(value = "${ms.resource.customer}/{id}", method = RequestMethod.GET)
-	public ResponseEntity<GenericMap> getCustomerById(@PathVariable Integer id) throws Exception
+	public ResponseEntity<GenericMap> getCustomer(@PathVariable String id) throws Exception
 	{
-		return adaptToTemplateResponse(customersService.getCustomers(id));
+		return adaptToTemplateResponse(customerService.getCustomers(id));
 	}
 
 }
