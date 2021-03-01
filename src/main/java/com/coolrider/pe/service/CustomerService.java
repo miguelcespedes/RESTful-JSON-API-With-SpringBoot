@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coolrider.pe.mapper.CustomerMapper;
-import com.coolrider.pe.model.CustomerModel;
 import com.coolrider.pe.model.GenericMap;
 
 /**
@@ -31,17 +30,15 @@ public class CustomerService
 	public GenericMap getCustomers(String id)
 	{
 		GenericMap map = new GenericMap();
-		List<CustomerModel> customersList = new ArrayList<CustomerModel>();
-
-		if (id==null)
+		List<GenericMap> customersList = new ArrayList<GenericMap>();
+		if (id == null)
 			customersList = customerMapper.findAll();
 		else
 			customersList = customerMapper.findById(id);
-
 		map.put("total", customersList.size());
-		logger.info("total: {}", customersList.size());
+		logger.info("CustomerService/total: {}", customersList.size());
 		map.put("elements", customersList);
-		logger.info("elements: {}", customersList);
+		logger.info("CustomerService/elements: {}", customersList);
 		return map;
 	}
 
