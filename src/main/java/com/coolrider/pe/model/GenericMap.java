@@ -13,15 +13,13 @@ import com.bazaarvoice.jolt.JsonUtils;
  */
 public class GenericMap extends HashMap<String, Object>
 {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public String toString()
 	{
 		return JsonUtils.toJsonString(this);
-				
+
 	}
 }

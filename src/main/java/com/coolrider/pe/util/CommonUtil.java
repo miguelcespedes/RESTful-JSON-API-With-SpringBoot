@@ -52,7 +52,8 @@ public class CommonUtil
 
 	}
 	/*
-	 * public static String getOperation(HttpServletRequest servlet) { return servlet.getRequestURI().toLowerCase().replace("/", ""); }
+	 * public static String getOperation(HttpServletRequest servlet) { return
+	 * servlet.getRequestURI().toLowerCase().replace("/", ""); }
 	 */
 
 	public static boolean strIsNull(String str)
@@ -75,8 +76,11 @@ public class CommonUtil
 	}
 
 	/*
-	 * public static GenericMap httpToMap(HttpHeaders http) { GenericMap map = new GenericMap(); Iterator<Entry<String, List<String>>> entries = http.entrySet().iterator(); while (entries.hasNext()) { Entry<String, List<String>> entry = entries.next(); String key = entry.getKey();
-	 * Object value = entry.getValue().get(0); map.put(key, value); } return map; }
+	 * public static GenericMap httpToMap(HttpHeaders http) { GenericMap map = new
+	 * GenericMap(); Iterator<Entry<String, List<String>>> entries =
+	 * http.entrySet().iterator(); while (entries.hasNext()) { Entry<String,
+	 * List<String>> entry = entries.next(); String key = entry.getKey(); Object
+	 * value = entry.getValue().get(0); map.put(key, value); } return map; }
 	 */
 	public static String MapToString(GenericMap map)
 	{

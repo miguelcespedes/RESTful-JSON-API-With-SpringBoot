@@ -30,7 +30,7 @@ public class CustomersController extends AbstractController
 		return adaptToTemplateResponse(customersService.getCustomers(0));
 	}
 
-	@RequestMapping(value = "/${ms.resource.customer}/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "${ms.resource.customer}/{id}", method = RequestMethod.GET)
 	public ResponseEntity<GenericMap> getCustomerById(@PathVariable Integer id) throws Exception
 	{
 		return adaptToTemplateResponse(customersService.getCustomers(id));

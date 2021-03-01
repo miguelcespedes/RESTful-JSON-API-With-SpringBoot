@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -24,6 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
+@EnableWebMvc
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerConfig
 {
@@ -76,4 +78,5 @@ public class SwaggerConfig
 				, licenseName, licenseUrl, Collections.emptyList()
 		);
 	}
+
 }

@@ -57,6 +57,12 @@
 		<!-- -->
 		<!-- -->
 		<!-- -->
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5 -->
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring5</artifactId>
+			<version>3.0.11.RELEASE</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.bazaarvoice.jolt/jolt-core -->
 		<dependency>
 			<groupId>com.bazaarvoice.jolt</groupId>
@@ -127,7 +133,26 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>Run URL in system browser.</id>
+						<phase>install</phase>
+						<configuration>
+							<target>
+								<exec executable="start" vmlauncher="false">
+									<arg line="http://127.0.0.1/coolrider" />
+								</exec>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

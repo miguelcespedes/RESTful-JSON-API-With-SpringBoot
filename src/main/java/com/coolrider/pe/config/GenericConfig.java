@@ -32,6 +32,4 @@ public class GenericConfig
 		return mapBean;
 	}
 
-
-
 }

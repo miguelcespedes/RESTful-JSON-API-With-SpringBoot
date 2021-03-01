@@ -38,9 +38,9 @@ public class CustomersService
 		GenericMap genericMap = new GenericMap();
 		List<CustomersEntity> customersList = new ArrayList<CustomersEntity>();
 		if (id.equals(0))
-		customersList = customersRepository.findAll();
+			customersList = customersRepository.findAll();
 		else
-		customersList.add(customersRepository.findById(id).get());
+			customersList.add(customersRepository.findById(id).get());
 		genericMap.put("total", customersList.size());
 		genericMap.put("elements", customersList);
 		return genericMap;

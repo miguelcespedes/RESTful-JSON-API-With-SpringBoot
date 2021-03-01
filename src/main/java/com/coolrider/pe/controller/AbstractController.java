@@ -28,7 +28,7 @@ public abstract class AbstractController
 			untransformed = CommonUtil.easyMap("message", untransformed);
 			logger.debug("adaptToTemplateResponse/untransformed: {}", JsonUtils.toJsonString(untransformed));
 			GenericMap transformed = CommonUtil.toGenericMap(
-					Chainr.fromSpec(JsonUtils.classpathToList("/tpl/response.json")).transform(untransformed)
+					Chainr.fromSpec(JsonUtils.classpathToList("/jolt/response.json")).transform(untransformed)
 			);
 			logger.debug("adaptToTemplateResponse/transformed: {}", JsonUtils.toJsonString(transformed));
 			return new ResponseEntity<>(transformed, HttpStatus.OK);

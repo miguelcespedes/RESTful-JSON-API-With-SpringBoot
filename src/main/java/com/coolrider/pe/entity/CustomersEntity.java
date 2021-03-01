@@ -27,7 +27,9 @@ public class CustomersEntity
 	{
 	}
 
-	public CustomersEntity(int customerId, String identifierType, String identifierValue, String fullName, String address)
+	public CustomersEntity(
+			int customerId, String identifierType, String identifierValue, String fullName, String address
+	)
 	{
 		super();
 		this.customerId = customerId;
@@ -38,7 +40,7 @@ public class CustomersEntity
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getCustomerId()
 	{
 		return customerId;

@@ -1,7 +1,7 @@
 package com.coolrider.pe.util;
 
 /**
- * <h1>CommonUtil</h1> 
+ * <h1>CommonUtil</h1>
  * https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
  * 
  * @author Miguel Céspedes
