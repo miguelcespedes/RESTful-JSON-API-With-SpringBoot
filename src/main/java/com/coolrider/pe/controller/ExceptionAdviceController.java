@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.coolrider.pe.exception.BusinessException;
 import com.coolrider.pe.model.GenericMap;
 import com.coolrider.pe.util.CommonUtil;
+import com.coolrider.pe.util.HttpStatusData;
 
 /**
  * <h1>ExceptionAdviceController</h1>
@@ -37,10 +38,12 @@ public class ExceptionAdviceController
 		{
 			response.put("code", ((BusinessException) ex).getBusinessCode());
 			response.put("message", ((BusinessException) ex).getBusinessMessage());
+			logger.error("ERROR->{}",((BusinessException) ex).getBusinessMessage());
 		} else
 		{
 			response.put("code", "F99");
-			response.put("message", ex.getMessage());
+			response.put("message", HttpStatusData.INTERNAL_SERVER_ERROR.getDescription());
+			logger.info("VALIDACIÓN->{}",ex.getMessage());
 		}
 
 		// enviando cabeceras
